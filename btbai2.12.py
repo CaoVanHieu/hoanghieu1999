@@ -1,22 +1,23 @@
 import re
 value = []
-items=[x for x in input("Nhập mật khẩu: ").split(',')]
+items=[x for x in input ("nhập mật khẩu:").split(',')]
+# ############
 for p in items:
     if len(p)<6 or len(p)>12:
         continue
     else:
         pass
     if not re.search("[a-z]",p):
-       continue
-    elif not re.search("[0-9]",p):
-       continue
-    elif not re.search("[A-Z]",p):
-       continue
-    elif not re.search("[$#@]",p):
-       continue
+        continue
+    elif not re.search("0-9",p):
+        continue
+    if not re.search("[A-Z]", p):
+        continue
+    elif not re.search("[a#@]",p):
+        continue
     elif re.search("\s",p):
-       continue
+        continue
     else:
-       pass
-    value.append(p)
-print (",".join(value))
+        pass
+    value,append(p)
+print(",".join(value))
